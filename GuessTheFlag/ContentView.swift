@@ -17,6 +17,7 @@ struct ContentView: View {
     
     @State private var showingScore = false
     @State private var scoreTitle = ""
+    @State private var scoreMessage = ""
     @State private var score = 0
     
     var body: some View {
@@ -73,17 +74,19 @@ struct ContentView: View {
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue", action: askQuestion)
         } message: {
-            Text("Your score is \(score)")
+            Text(scoreMessage)
         }
     }
     
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
-            scoreTitle = "Correct"
+            scoreTitle = "Correct!"
             score += 1
+            scoreMessage = "Your score is \(score)."
         } else {
-            scoreTitle = "Wrong"
+            scoreTitle = "Wrong!"
             score -= 1
+            scoreMessage = "That's the flag of \(countries[number]).\nYour score is \(score)."
         }
         
         showingScore = true
