@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var countries = [
-        "Estonia", "France", "Gremany", "Ireland", "Italy", "Nigeria", "Poland",
+        "Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland",
         "Spain", "UK", "Ukraine", "US",
     ]
 
